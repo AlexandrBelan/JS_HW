@@ -53,6 +53,6 @@ item_7 = item_6.toString();
 item_7_type = typeof(item_7)
 console.log(`item_7 == ${item_7},  item_6_type == ${item_7_type}`)  
 
-
+ 
 
 

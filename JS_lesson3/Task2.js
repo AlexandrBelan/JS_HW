@@ -16,3 +16,4 @@ let result_2_1 = (-secondСoefficient + Math.sqrt(discriminant))/(2 * firstСoef
 let result_2_2 = (-secondСoefficient - Math.sqrt(discriminant))/(2 * firstСoefficient)
 
 console.log(`"Ответ к уравнению 1: ${result_1}", "Ответ к уравнению 2: ${result_2_1} и ${result_2_2}"`)
+ 

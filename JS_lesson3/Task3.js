@@ -7,3 +7,4 @@ secondConcatenation = firstConcatenation + N.toString();
 let result = N + Number(firstConcatenation) + Number(secondConcatenation);
 console.log(result);
 
+ 
