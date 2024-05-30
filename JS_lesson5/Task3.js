@@ -28,7 +28,7 @@ const offset = 1;
 let resultStr = '';
 let index;
 let newIndex;
-for (i=0; i < str.length; i++) {
+for (let i=0; i < str.length; i++) {
     index = alphabet.indexOf(str[i].toLowerCase())
     newIndex = index + offset;
     if (index === 0 && offset < 0) {
@@ -38,10 +38,10 @@ for (i=0; i < str.length; i++) {
         newIndex = 0;
     }
     if (str[i] !== alphabet[index]){
-        resultStr = resultStr + alphabet[newIndex].toUpperCase();
+        resultStr += alphabet[newIndex].toUpperCase();
     } else {
-        index = index + offset;
-        resultStr = resultStr + alphabet[newIndex];
+        index += offset;
+        resultStr += alphabet[newIndex];
     }
 }
 console.log(resultStr)
