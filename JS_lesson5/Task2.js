@@ -14,11 +14,11 @@
 
 //   Результат должен быть округлен до 1 знака после запятой методом .toFixed(), про который надо почитать самим ;)
 
-const byte = 10000000000000;
+const byte = 100000000000000000;
 let size = '';
 let result = byte;
 let i = 0
-while (result > 1024) {
+while (result > 1024 && i < 4)  {
         i++;
         result = result / 1024
 }
