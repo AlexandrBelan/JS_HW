@@ -4,12 +4,9 @@
 //   const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
 const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
 function comparisonPizzas (...myPizzas) {
-    let result = [];
-    for (const pizza of myPizzas) {
-        if (competitorPizzas.indexOf(pizza) < 0) {
-           result.push(pizza)
-        }
-    };
+    const competitorPizzasLowerCase = competitorPizzas.map(pizza => pizza.toLowerCase());
+    const myPizzasLowerCase = myPizzas.map(pizza => pizza.toLowerCase())
+    const result = myPizzasLowerCase.filter(pizza => competitorPizzasLowerCase.indexOf(pizza) < 0);
     return result;
 }
 comparisonPizzas('Peperoni', 'Milk Joe', 'Diablo', '4 cheeses', 'hawai', 'Govno', 'Peperoni')
@@ -21,7 +18,7 @@ function maxLengthWord (str) {
     const maxLength = Math.max(...arrayWords.map(word => word.length));
     const resultWords = arrayWords.filter(word => word.length === maxLength);
     return resultWords;
-    
+  
 }
 maxLengthWord('которая принимает предложение которая принимает предложение и челмедведосвин атакует галактику свинчелмедведо челмедведосвинc челмедведосвин')
 // 3. Напишите функцию, которая принимает на вход массив чисел, убирает из него дубликаты и возвращает массив с только уникальными значениями.
