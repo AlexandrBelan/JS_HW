@@ -2,7 +2,7 @@
 // Если сумма получилась больше 9 - снова сложите цифры. И так пока, сумма не станет меньше либо равной 9. 
 //  После окончания сложений возвращает полученное число. Например при подаче числа 19 (1+9=10>9, потому 1+0=1) выводится 1
 function sumOfDigits (num) {
-    let arrayDigitsString = num.toString().split('');
+    const arrayDigitsString = num.toString();
     let sumDigits = 0;
     for (const num1 of arrayDigitsString) {
         sumDigits += Number(num1);
@@ -22,9 +22,15 @@ function noDouble (str){
     const arrStr = str.split('');
     let result = [];
     let hasBeenModified = false;
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     for (let i = 0; i < arrStr.length; i++) {
         if (arrStr[i] === arrStr[i+1]){
+            if (alphabet.indexOf(arrStr[i]) + 1 === alphabet.length) {
+                result.push(alphabet[0]);
+                hasBeenModified = true;
+                i++;
+                continue
+            }
             result.push(alphabet[alphabet.indexOf(arrStr[i]) + 1]);
             hasBeenModified = true;
             i++;
@@ -34,13 +40,13 @@ function noDouble (str){
     };
     const resultStr = result.join('');
     if (hasBeenModified) {
-        return (noDouble(resultStr));
+        return noDouble(resultStr);
     } else {
-        return (resultStr);
+        return resultStr;
     };
 }
 
-// console.log(noDouble('aabbcfgdrtttttttt'))
+console.log(noDouble('zzaabbcfgdrttttttttzzzz'))
 
 
 
